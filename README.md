@@ -31,6 +31,15 @@ MeshCommander traditionally stores its computer list in browser `localStorage`, 
 
 This project packages MeshCommander into a Docker container and applies build-time patches that allow the computer list to be stored **server-side** on a persistent volume.
 
+## Files Included
+
+This repository includes:
+- `docker-compose.yml` - With Traefik reverse proxy support
+- `docker-compose.simple.yml` - Simple port exposure (no Traefik)
+- `build/Dockerfile` - Custom Dockerfile with persistence modifications
+
+> **Note:** See the [blog post](https://spaceterran.com/posts/meshcommander-docker-persistent-amt-management/) for detailed setup instructions and configuration guidance.
+
 ## Features
 
 - Server-side persistent computer list
