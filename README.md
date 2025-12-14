@@ -1,5 +1,13 @@
 # meshcmd-server-persistent
 
+## Background
+
+This repository accompanies a detailed write-up explaining the motivation, design decisions, and security considerations behind this setup.
+
+📖 **Blog post:**  
+A Better Way to Run MeshCommander in Your Homelab (Intel vPro + Docker)  
+https://spaceterran.com/posts/TBD
+
 Dockerized **MeshCommander** with **server-side persistence** for the
 computer list, designed for Intel® AMT / vPro environments.
 
@@ -88,6 +96,3 @@ patches for persistence - Does not claim ownership of MeshCommander
 ## License
 
 MIT License.
-
-MeshCommander is © Intel / Ylian Saint-Hilaire and is distributed under
-its original license terms.
