@@ -1,0 +1,24 @@
+services:
+  meshcommander:
+    build:
+      context: ./build
+      dockerfile: Dockerfile
+    container_name: meshcommander
+    restart: unless-stopped
+    networks:
+      - your-network  # Update this to match your Traefik network
+    volumes:
+      - ./data:/app/data
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.meshcommander.entrypoints=websecure"
+      - "traefik.http.routers.meshcommander.rule=Host(`mesh.yourdomain.com`)"  # Update this
+      - "traefik.http.routers.meshcommander.tls=true"
+      - "traefik.http.routers.meshcommander.tls.certresolver=production"
+      - "traefik.http.services.meshcommander.loadbalancer.server.port=3000"
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  your-network:
+    external: true

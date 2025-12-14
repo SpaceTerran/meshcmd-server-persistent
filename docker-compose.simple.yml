@@ -1,0 +1,13 @@
+services:
+  meshcommander:
+    build:
+      context: ./build
+      dockerfile: Dockerfile
+    container_name: meshcommander
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    security_opt:
+      - no-new-privileges:true
